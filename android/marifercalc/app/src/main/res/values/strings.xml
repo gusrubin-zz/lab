@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MariferCalc</string>
+    <string name="action_settings">Configurações</string>
+    <string name="label_endereco_origem">Endereço de Origem</string>
+    <string name="label_endereco_destino">Endereço de Destino</string>
+    <string name="label_preco_combustivel">Preço do Combustível</string>
+    <string name="botao_calcular">Calcular</string>
+</resources>
