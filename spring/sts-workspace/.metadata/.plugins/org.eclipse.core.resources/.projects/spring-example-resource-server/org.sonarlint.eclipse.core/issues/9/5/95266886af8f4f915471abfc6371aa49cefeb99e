@@ -1,10 +1,0 @@
-
-}	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(«Ñé”ÿÿÿÿÿ8Ÿ¯Ó§ˆ0H‡HRMAJORZ
-CODE_SMELL
-¤
-java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(«Ñé”ÿÿÿÿÿ8Ÿ¯Ó§ˆ0HˆHRMINORZ
-CODE_SMELL
-s	java:S125	"<This block of commented-out lines of code should be removed.(³á­üÿÿÿÿ8ŸáÝŽ…0HŠHRMAJORZ
-CODE_SMELL
-s	java:S125"<This block of commented-out lines of code should be removed.(¸¢˜Ïøÿÿÿÿ8ŸáÝŽ…0H‹HRMAJORZ
-CODE_SMELL
