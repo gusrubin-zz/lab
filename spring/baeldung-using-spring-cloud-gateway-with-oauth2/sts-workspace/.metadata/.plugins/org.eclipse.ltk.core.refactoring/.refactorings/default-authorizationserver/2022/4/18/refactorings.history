@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;default-authorizationserver/samples-default-authorizationserver.gradle&apos; to &apos;build.gradle&apos;" description="Rename resource &apos;samples-default-authorizationserver.gradle&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="samples-default-authorizationserver.gradle" name="build.gradle" stamp="1651078942348" updateReferences="true"/>
-</session>

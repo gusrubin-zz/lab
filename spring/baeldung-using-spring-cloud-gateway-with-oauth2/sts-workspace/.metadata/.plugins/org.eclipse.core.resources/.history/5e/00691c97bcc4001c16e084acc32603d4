@@ -1,8 +1,0 @@
-server:
-  port: 8081
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        opaquetoken:
-          introspection-uri: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/token/introspect
