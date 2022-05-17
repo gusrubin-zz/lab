@@ -1,0 +1,13 @@
+server:
+  port: 8081
+  
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/labjpa
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    locations: classpath:db/migration/postgresql

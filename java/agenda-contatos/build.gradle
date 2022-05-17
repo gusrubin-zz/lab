@@ -1,0 +1,20 @@
+group 'com.gusrubin.lab.java.agendacontatos'
+version = '1.0'
+
+apply plugin: 'java'
+sourceCompatibility = 11
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
+
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}

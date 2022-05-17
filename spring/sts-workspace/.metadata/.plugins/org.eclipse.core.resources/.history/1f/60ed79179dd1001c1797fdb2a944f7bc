@@ -1,0 +1,53 @@
+package com.gusrubin.lab.hexagonal.domain.customer;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.Assert;
+
+public class CustomerService implements CustomerCrudUseCase {
+
+    private final CustomerRepositoryPort customerRepository;
+
+    @Autowired
+    public CustomerService(CustomerRepositoryPort customerRepositoryPort) {
+	this.customerRepository = customerRepositoryPort;
+    }
+
+    @Override
+    public Customer create(Customer customer) {
+	// Validations
+	Assert.hasText(customer.getName(), "Name is required");
+	Assert.hasText(customer.getEmail(), "Email is required");
+
+	// Preparation
+	customer.setId(null);
+
+	// Performs method goals
+	return customerRepository.save(customer);
+    }
+
+    @Override
+    public List<Customer> findAll() {
+	return customerRepository.findAll();
+    }
+
+    @Override
+    public Customer findById(Long id) {
+	Assert.isNull(id, "Id is required");
+	return customerRepository.findById(id);
+    }
+
+    @Override
+    public Customer update(Long id, Customer customer) {
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    @Override
+    public void delete(Long id) {
+	// TODO Auto-generated method stub
+
+    }
+
+}

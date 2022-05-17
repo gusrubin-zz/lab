@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;oauth-authorization-server/src/main/resources/baeldung-realm.json&apos; to &apos;baeldung-realm-old.json&apos;" description="Rename resource &apos;baeldung-realm.json&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/baeldung-realm.json" name="baeldung-realm-old.json" stamp="1650905260603" updateReferences="true"/>
+</session>

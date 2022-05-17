@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.import">
+		<item key="project_location" value="/home/gusrubin/particular/lab/spring/baeldung-using-spring-cloud-gateway-with-oauth2/spring-authorization-server/samples"/>
+		<item key="gradle_distribution" value="GRADLE_DISTRIBUTION(LOCAL_INSTALLATION(/opt/gradle/gradle-7.4.2/bin))"/>
+	</section>
+</section>

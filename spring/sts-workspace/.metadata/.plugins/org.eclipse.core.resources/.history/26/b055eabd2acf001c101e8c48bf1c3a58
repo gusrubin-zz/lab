@@ -1,0 +1,26 @@
+package com.gusrubin.springgateway.infrastructure;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.web.server.SecurityWebFilterChain;
+
+//@Configuration(proxyBeanMethods = false)
+//@EnableWebFluxSecurity
+public class SpringSecurityConfig {
+
+//    @Bean
+//    SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) {
+//	http
+//	// @formatter:off
+//		.authorizeExchange(exchanges -> exchanges
+//                .pathMatchers("/actuator/**", "/**").permitAll()
+//                .pathMatchers("/api/**")
+////                .anyExchange()
+//                .authenticated());
+//        // @formatter:on
+//	return http.build();
+    }
+
+}

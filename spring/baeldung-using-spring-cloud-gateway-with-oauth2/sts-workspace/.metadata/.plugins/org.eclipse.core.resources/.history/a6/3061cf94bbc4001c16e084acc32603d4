@@ -1,0 +1,5 @@
+package com.gusrubin.quotes.quotesresource.infrastructure.quote;
+
+public class QuoteServiceAdapter {
+
+}

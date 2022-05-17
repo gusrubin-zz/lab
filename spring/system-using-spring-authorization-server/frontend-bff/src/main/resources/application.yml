@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: frontend-bff
+logging:
+  file:
+    name: logs/frontend-bff.log
+---
+spring:
+  profiles:
+    active: development
+server:
+  port: 4001
+logging:
+  level:
+    '[com.gusrubin.frontendbff]': debug
+       

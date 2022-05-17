@@ -1,0 +1,74 @@
+spring:
+  application:
+    name: api-gateway
+logging:
+  file:
+    name: logs/api-gateway.log
+---
+spring:
+  profiles:
+    active: development
+  main:
+    allow-bean-definition-overriding: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret: 
+#      client:
+#        provider:
+#          spring:
+#            issuer-uri: http://auth-service:9001
+#        registration:
+#          gateway-client:
+#            provider: spring
+#            client-id: gateway-client
+#            client-secret: gatewaysecret
+#            scope:
+#            - openid
+#            - message.read
+#            - message.write
+#      resourceserver:
+#        opaquetoken:
+#          introspection-uri: http://auth-service:9001
+#          client-id: gateway-client
+#          client-secret: gatewaysecret
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+      routes:
+      - id: auth-service-api
+        predicates:
+        - Path=/api/auth/**
+#        filters:
+#        - 'TokenRelay='
+        uri: http://auth-service:9001
+      - id: ui-service        
+        predicates:
+        - Path=/portal/**
+#        filters:
+#        - TokenRelay=
+#        - RewritePath=/portal(?<segment>/?.*),/$\{segment}
+#        uri: http://ui-service:4200/portal
+        uri: http://localhost:3005/portal
+      - id: public-api        
+        predicates:
+        - Path=/api/public/**
+#        uri: http://resource-service:8090/api/public
+        uri: http://localhost:3005/api/public
+#      - id: secure-api        
+#        predicates:
+#        - Path=/api/secure/**
+#        filters:
+#        - 'TokenRelay='
+#        uri: http://resource-service1:8090/api/secure
+server:
+  port: 4000
+logging:
+  level:
+    '[com.gusrubin.springgateway]': debug

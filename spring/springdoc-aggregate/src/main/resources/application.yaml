@@ -1,0 +1,55 @@
+spring: 
+  application:
+    name: springdoc-aggregate
+
+logging:
+  file:
+    name: logs/springdoc-aggregate.log
+  level:
+    com.netflix.eureka: off
+    com.netflix.discovery: off
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    urls[0]:
+      name: Products
+      url: http://localhost:4000/springdoc/v3/api-docs
+    urls[1]:
+      name: Example
+      url: http://localhost:33823/v3/api-docs     
+    
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - development
+    
+server:
+  port: 0
+  
+eureka:
+  client:
+      service-url:      
+        defaultZone: http://localhost:8761/eureka
+  
+springdoc:
+  swagger-ui:
+    csrf:
+      enabled: true
+    
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - production 
+    
+server:
+  port: 8080 

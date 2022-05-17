@@ -1,0 +1,20 @@
+server:
+  port: 8090 
+logging:
+  file:
+    name: logs/caching-rest-api.log    
+spring:
+  application:
+    name: customer-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    locations: 'classpath:db/migration'
+---
+spring:
+  profiles:
+    active: development
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springcache
+    username: postgres
+    password: postgres

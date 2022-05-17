@@ -1,0 +1,36 @@
+spring: 
+  application:
+    name: discovery-service
+
+logging:
+  file:
+    name: logs/discovery-service.log
+    
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - development
+    
+server:
+  port: 8761
+  
+eureka:
+  instance:
+    prefer-ip-address: false
+    
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - production 
+    
+server:
+  port: 8761 

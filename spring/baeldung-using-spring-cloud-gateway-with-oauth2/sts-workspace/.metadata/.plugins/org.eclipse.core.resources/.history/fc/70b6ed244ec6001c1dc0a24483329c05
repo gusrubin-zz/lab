@@ -1,0 +1,5 @@
+package com.example.defaultauthorizationserver;
+
+public class AuthorizationServerConfig {
+
+}

@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: auth-client
+logging:
+  file:
+    name: logs/auth-client.log
+---
+spring:
+  profiles:
+    active: development
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000
+      client:
+        provider:
+          spring-idp:
+            issuer-uri: http://localhost:9000
+        registration:
+          gateway-client:
+            provider: spring-idp
+            client-id: example-client
+            client-secret: secretexample
+            scope:
+            - message.read
+            - message.write          
+#      client:
+#        registration:
+#          articles-client-oidc:
+#            provider: spring
+#            client-id: examples-client
+#            client-secret: secret
+#            authorization-grant-type: authorization_code
+#            redirect-uri: "http://127.0.0.1:8000/login/oauth2/code/{registrationId}"
+#            scope: openid
+#            client-name: examples-client-oidc
+#          articles-client-authorization-code:
+#            provider: spring
+#            client-id: examples-client
+#            client-secret: secret
+#            authorization-grant-type: authorization_code
+#            redirect-uri: "http://127.0.0.1:8000/authorized"
+#            scope: examples.read
+#            client-name: examples-client-authorization-code
+#        provider:
+#          spring:
+#            issuer-uri: http://localhost:8000
+server:
+  port: 8101
+logging:
+  level:
+    '[com.gusrubin.springauthclient]': debug
+       

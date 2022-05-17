@@ -1,0 +1,36 @@
+server:
+   port: 8091
+logging:
+   file:
+      name: logs/ldap-authentication.log
+   level:
+      com.gusrubin.lab.ldapauthentication: debug
+spring:
+   application:
+      name: ldap-authentication
+---
+spring:
+   config:
+      activate:
+         on-profile:
+         - development
+   ldap:
+      embedded:
+         ldif: classpath:test-server.ldif
+         base-dn: dc=springframework,dc=org
+         port: 8389
+ldap:
+   url: ldap://localhost:8389
+   user-base-dn: ou=people,dc=springframework,dc=org
+   user-attribute: uid
+---
+spring:
+   config:
+      activate:
+         on-profile:
+         - production
+ldap:
+   url: ldaps://vds.int.thomsonreuters.com:636
+   user-base-dn: OU=ead,OU=users,DC=enterpriseAD
+   user-attribute: sAMAccountName
+   

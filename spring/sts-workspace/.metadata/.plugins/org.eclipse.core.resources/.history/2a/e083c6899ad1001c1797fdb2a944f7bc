@@ -1,0 +1,5 @@
+package com.gusrubin.lab.hexagonal.domain.customer;
+
+public interface CustomerCrudUseCase {
+
+}

@@ -1,0 +1,247 @@
+{
+  "uuid": "5ebac457-33ad-4226-9776-4e19654b528b",
+  "lastMigration": 19,
+  "name": "Spring lab",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3005,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "e07d858c-a94c-4938-b4d5-6ab44f02dfdd",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "c3bac683-8ebb-4ad7-adcc-ca7f96e99bcc",
+          "body": "{\"status\": \"root\"}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b27e3182-b025-4554-a450-b7aafda42e01",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "resource",
+      "responses": [
+        {
+          "uuid": "3ab55aa2-da61-497f-9c25-823a05a04e4e",
+          "body": "{\"status\": \"ok\"}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4fbc6b20-0ff0-47e9-813a-cc31038c2599",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "resource/a",
+      "responses": [
+        {
+          "uuid": "57a7a25e-6915-40f4-95d3-7a9ac3f9323c",
+          "body": "{\"status\": \"a\"}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "fb45d78a-2786-406a-9748-5c80ea10af66",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/auth",
+      "responses": [
+        {
+          "uuid": "8d60380c-9879-4881-bd08-8e21d5ab16b8",
+          "body": "{\"status\": \"api\"}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "14f436b9-5c07-4b57-91f4-9d2b03524b81",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "public",
+      "responses": [
+        {
+          "uuid": "9c9e5a27-e6cd-4abf-83f2-b2a73cb102c5",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "61e1ccaa-d2d6-471b-9ff9-019809907dfe",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "portal",
+      "responses": [
+        {
+          "uuid": "fbc77481-c6ef-4cc0-8c35-3140cb10e7ad",
+          "body": "<html>\n  <head></head>\n  <body>\n    Portal\n  </body>\n</html>",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "WWW-Authenticate",
+              "value": "Basic realm=\"Realm\""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ec0c17c9-e4d4-4103-be38-72e42d9bd638",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "call-back-a",
+      "responses": [
+        {
+          "uuid": "af1b0d0d-474e-4025-9a9d-383ebe1c638c",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d9f4dac4-b370-48dc-bc00-10a16f09bf16",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "call-back-b",
+      "responses": [
+        {
+          "uuid": "a8fea302-3f78-481a-b9e3-5d6a608adb94",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+package com.gusrubin.lab.hexagonal.application.api.customer;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.websocket.server.PathParam;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.gusrubin.lab.hexagonal.domain.customer.CustomerCrudUseCase;
+
+@RestController
+@RequestMapping("/api/customers")
+public class CustomerController {
+
+    private final CustomerCrudUseCase customerCrud;
+    private final ModelMapper mapper;
+
+    @Autowired
+    public CustomerController(CustomerCrudUseCase customerCrudUseCase, ModelMapper modelMapper) {
+	this.customerCrud = customerCrudUseCase;
+	this.mapper = modelMapper;
+    }
+
+    @PostMapping
+    public CustomerDto postCustomer(@RequestBody CustomerDto requestBody) {
+	CustomerDto responseBody = null;
+
+	return responseBody;
+    }
+
+    @GetMapping
+    public List<CustomerDto> getAllCustommers() {
+	List<CustomerDto> responseBody = new ArrayList<>();
+
+	return responseBody;
+    }
+
+    @PutMapping("/{id}")
+    public CustomerDto putCustomerById(@PathParam("id") Long id, @RequestBody CustomerDto requestBody) {
+	CustomerDto responseBody = null;
+
+	return responseBody;
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCustomerById(@PathParam("id") Long id) {
+
+    }
+
+}

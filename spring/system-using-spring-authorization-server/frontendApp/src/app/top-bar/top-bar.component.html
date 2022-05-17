@@ -1,0 +1,11 @@
+<div class="title-area">
+    <a [routerLink]="['/']">
+        <h1>{{ title }}</h1>
+    </a>
+</div>
+<div class="login-area">
+    <p class="login-area" *ngIf="isLoggedIn; else notLoggedBlock">Logged with {{ loggedInUsername }}</p>
+    <ng-template #notLoggedBlock><a [routerLink]="['/login']">
+            <h1>Login</h1>
+        </a></ng-template>
+</div>

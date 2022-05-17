@@ -1,0 +1,5 @@
+package com.gusrubin.lab.hexagonal.infrastructure.adapters;
+
+public class CustomerServiceAdapter {
+
+}

@@ -1,0 +1,64 @@
+spring: 
+  application:
+    name: springdoc-example
+
+logging:
+  file:
+    name: logs/springdoc-example.log
+  level:
+    '[com.netflix.eureka]': off
+    '[com.netflix.discovery]': off
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - development
+      
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      mode: always
+  h2:
+    console:
+      enabled: true
+      path: /h2
+    
+server:
+  port: 0
+  
+eureka:
+  client:
+      service-url:      
+        defaultZone: http://localhost:8761/eureka
+  
+springdoc:
+  swagger-ui:
+    csrf:
+      enabled: true
+    
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - production 
+    
+server:
+  port: 8080 

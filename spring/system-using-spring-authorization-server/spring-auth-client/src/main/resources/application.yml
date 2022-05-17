@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: example-resource-server
+logging:
+  file:
+    name: logs/example-resource-server.log
+---
+spring:
+  profiles:
+    active: development
+  security:
+    oauth2:
+      client:
+        registration:
+          examples-client-oidc:
+            provider: spring
+            client-id: examples-client
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://localhost:9000/login/oauth2/code/{registrationId}"
+            scope:
+            - openid
+            client-name: examples-client-oidc
+          examples-client-authorization-code:
+            provider: spring
+            client-id: examples-client
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://localhost:9000/authorized"
+            scope:
+            - examples.read
+            client-name: examples-client-authorization-code
+          examples-client-client-credentials:
+            provider: spring
+            client-id: examples-client
+            client-secret: secret
+            authorization-grant-type: client_credentials
+            scope:
+            - examples.read
+            client-name: examples-client-authorization-code
+        provider:
+          spring:
+            issuer-uri: http://localhost:9000
+examples:
+  base-uri: http://localhost:8101/api/examples        
+server:
+  port: 8100
+logging:
+  level:
+    '[com.gusrubin.springexampleresourceserver]': debug

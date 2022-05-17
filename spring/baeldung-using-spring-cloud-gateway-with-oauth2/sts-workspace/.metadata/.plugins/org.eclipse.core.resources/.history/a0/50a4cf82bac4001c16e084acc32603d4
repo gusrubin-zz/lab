@@ -1,0 +1,6 @@
+package com.gusrubin.quotes.quotesresource.infrastructure.config;
+
+//@EnableWebFluxSecurity
+public class ApplicationConfig {
+
+}

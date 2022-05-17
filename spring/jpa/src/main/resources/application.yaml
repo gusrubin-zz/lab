@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    #generate-ddl: true
+    show-sql: true
+     
+jasypt:
+  encryptor:
+#    password: 1234
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+     

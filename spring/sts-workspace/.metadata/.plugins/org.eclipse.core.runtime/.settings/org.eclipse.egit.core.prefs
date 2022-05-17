@@ -1,0 +1,4 @@
+GitRepositoriesView.GitDirectories=/home/gusrubin/particular/lab/spring/spring-authorization-server/.git\:/home/gusrubin/particular/lab/spring/gs-authenticating-ldap/.git\:/home/gusrubin/particular/lab/lab/.git\:/home/gusrubin/particular/lab/spring/caching-rest-api/.git\:/home/gusrubin/particular/lab/spring/tut-spring-security-and-angular-js/.git\:/home/gusrubin/particular/lab/spring/ui-service/frontend/.git\:
+GitRepositoriesView.GitDirectories.relative=/home/gusrubin/particular/lab/spring/spring-authorization-server/.git\:/home/gusrubin/particular/lab/spring/gs-authenticating-ldap/.git\:/home/gusrubin/particular/lab/lab/.git\:/home/gusrubin/particular/lab/spring/caching-rest-api/.git\:/home/gusrubin/particular/lab/spring/tut-spring-security-and-angular-js/.git\:/home/gusrubin/particular/lab/spring/ui-service/frontend/.git\:
+core_autoIgnoreDerivedResources=false
+eclipse.preferences.version=1

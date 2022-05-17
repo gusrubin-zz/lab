@@ -1,0 +1,59 @@
+spring: 
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+      routes:
+      - id: springdoc
+        uri: lb://springdoc-example
+        predicates:
+        - Path=/springdoc/**
+        filters:
+        - StripPrefix=1
+      - id: springdoc-aggregate
+        uri: lb://springdoc-aggregate
+        predicates:
+        - Path=/springdocag/**
+        filters:
+        - StripPrefix=1
+
+logging:
+  file:
+    name: logs/gateway-service.log
+  level:
+    com.netflix.eureka: off
+    com.netflix.discovery: off
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - development
+    
+server:
+  port: 4001
+  
+eureka:
+  client:
+      service-url:      
+        defaultZone: http://localhost:8761/eureka
+    
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - production 
+    
+server:
+  port: 4000 

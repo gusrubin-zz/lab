@@ -1,0 +1,16 @@
+package com.gusrubin.lab.hexagonal.infrastructure.adapters;
+
+import org.springframework.stereotype.Service;
+
+import com.gusrubin.lab.hexagonal.domain.customer.CustomerRepositoryPort;
+import com.gusrubin.lab.hexagonal.domain.customer.CustomerService;
+
+@Service
+public class CustomerServiceImpl extends CustomerService {
+
+    public CustomerServiceImpl(CustomerRepositoryPort customerRepositoryPort) {
+	super(customerRepositoryPort);
+	// TODO Auto-generated constructor stub
+    }
+
+}

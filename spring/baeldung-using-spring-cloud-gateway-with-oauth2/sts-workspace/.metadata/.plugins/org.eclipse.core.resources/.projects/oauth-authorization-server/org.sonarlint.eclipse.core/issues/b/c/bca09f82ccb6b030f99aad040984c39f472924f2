@@ -1,0 +1,7 @@
+
+œ
+java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÙØ¤ÞýÿÿÿÿHRMINORZ
+CODE_SMELL
+\
+java:S1611"1Remove the parentheses around the "evt" parameter(†²¼ÎHRMINORZ
+CODE_SMELL
