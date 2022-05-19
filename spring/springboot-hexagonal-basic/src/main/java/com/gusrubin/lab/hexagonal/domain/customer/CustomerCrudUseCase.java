@@ -2,16 +2,20 @@ package com.gusrubin.lab.hexagonal.domain.customer;
 
 import java.util.List;
 
+/**
+ * @author Gustavo Rubin
+ */
+
 public interface CustomerCrudUseCase {
 
-    Customer create(Customer customer);
+	Customer create(Customer customer);
 
-    List<Customer> findAll();
+	List<Customer> findAll();
 
-    Customer findById(Long id);
+	Customer findById(Long id);
 
-    Customer update(Long id, Customer customer);
+	Customer update(Long id, Customer customer);
 
-    void delete(Long id);
+	void delete(Long id);
 
 }

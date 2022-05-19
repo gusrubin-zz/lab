@@ -1,6 +1,8 @@
 spring:
   application:
     name: hexagonal-architecure
+  main:
+    allow-circular-references: true
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:testdb    
@@ -11,11 +13,17 @@ spring:
     defer-datasource-initialization: true
   h2:
     console:
-      enabled: true
+      enabled: true  
 server:
   port: 8090
 logging:
   file:
     name: logs/springboot-hexagonal-architecure.log
   level:
-    '[com.gusrubin.lab.hexagonal]': debug
+    '[com.zaxxer]': off
+    '[org.hibernate]': off
+    '[org.apache]': off 
+    '[org.springframework]': off
+    '[com.gusrubin.lab.hexagonal]': off
+    '[com.gusrubin.lab.hexagonal.application.schedule]': off
+    '[org.jline]': off
