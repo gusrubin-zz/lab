@@ -11,10 +11,10 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("api/public")
 public class PublicInfoController {
 
-    @GetMapping
-    public String getPublicInfo() {
-	log.info("calling getPublicInfo()");
-	return "{\"response\": \"This is a public information from resource server\"}";
-    }
+	@GetMapping
+	public String getPublicInfo() {
+		log.info("calling getPublicInfo()");
+		return "{\"response\": \"This is a public information from resource server\"}";
+	}
 
 }

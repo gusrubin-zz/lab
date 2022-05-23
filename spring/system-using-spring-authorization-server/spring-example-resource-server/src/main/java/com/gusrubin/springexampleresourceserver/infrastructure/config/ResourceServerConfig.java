@@ -8,19 +8,19 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebSecurity
 public class ResourceServerConfig {// extends WebSecurityConfigurerAdapter {
 
-    @Bean
-    SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) throws Exception {
-	http
+	@Bean
+	SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) throws Exception {
+		http
 	// @formatter:off
-//		.mvcMatcher("/api/examples/**")
-		.authorizeExchange(exchanges -> exchanges
-                .pathMatchers("/actuator/**", "/api/public")
-                .permitAll()
-                .anyExchange()
-                .authenticated());
+//			.mvcMatcher("/api/examples/**")
+			.authorizeExchange(exchanges -> exchanges
+	                .pathMatchers("/actuator/**", "/api/public")
+	                .permitAll()
+	                .anyExchange()
+	                .authenticated());
         // @formatter:on
-	return http.build();
-    }
+		return http.build();
+	}
 
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {

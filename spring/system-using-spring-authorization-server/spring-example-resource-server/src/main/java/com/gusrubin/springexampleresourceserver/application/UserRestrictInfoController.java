@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController("api/users")
 public class UserRestrictInfoController {
 
-    @GetMapping
-    public String getUsers() {
-	return "This is a user restrict information from resource server";
-    }
+	@GetMapping
+	public String getUsers() {
+		return "This is a user restrict information from resource server";
+	}
 
 }

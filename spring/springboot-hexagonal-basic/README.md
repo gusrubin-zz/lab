@@ -1,31 +1,32 @@
-# Read Me First
+# Hexagonal Project Example
 The following was discovered as part of building this project:
+This is a example project built in hexagonal architecture, the requirements for development were:
 
-* The original package name 'com.gusrubin.lab.springboothexagonal-basic' is invalid and this project uses 'com.gusrubin.lab.springboothexagonalbasic' instead.
+* To create an application for customer base (CRUD);
+* To provide API REST;
+* To provide Command Line Interface (CLI);
+* To have a schedule task to list all customers in console log one time per minute;
+* To persist data in database.
 
 # Getting Started
 
-### Reference Documentation
-For further reference, please consider the following sections:
+### Package organization
+The base package for this application is 'com.gusrubin.lab.hexagonal', the sub-packages are:
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.6.7/gradle-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.6.7/gradle-plugin/reference/html/#build-image)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.6.7/reference/htmlsingle/#using-boot-devtools)
-* [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/2.6.7/reference/htmlsingle/#configuration-metadata-annotation-processor)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.6.7/reference/htmlsingle/#boot-features-developing-web-applications)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.6.7/reference/htmlsingle/#boot-features-jpa-and-spring-data)
+* <em>application</em> - Contains implementation of application layer (API REST, CLI and Schedule task).<br><br>
+* <em>domain</em> - Contains all business rules, primary ports (UseCase interfaces) and secondary ports (Port interfaces). It's infrastructure independent, no tecnology or framework annotation or implementations are permited here.<br><br>
+* <em>infrastructure</em> - Contains port adapters (implementation of secondary ports) and others related framework/tecnology implementations.
 
-### Guides
+### References
 The following guides illustrate how to use some features concretely:
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+* [Building a Hexagonal Architecture, DDD, and Spring](https://www.baeldung.com/hexagonal-architecture-ddd-spring)
+* [Building a Bank Account example application in Hexagonal](https://jivimberg.io/blog/2020/02/01/hexagonal-architecture-on-spring-boot/)
+* [NetFlix use case](https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749)
 
 ### Additional Links
 These additional references should also help you:
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
-
+* [SOLID](https://en.wikipedia.org/wiki/SOLID)
+* [Hexagonal Archictecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software))
+* [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design)
