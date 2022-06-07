@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: hexagonal-architecture-example-capitals
+  main:
+    allow-circular-references: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb    
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+      platform: h2
+  h2:
+    console:
+      enabled: true
+      #http://localhost:8080/h2-console
+server:
+  port: 8090
+logging:
+  file:
+    name: logs/springboot-hexagonal-architecture-example-capitals.log
+  level:
+    '[com.zaxxer]': off
+    '[org.hibernate]': off
+    '[org.apache]': off 
+    '[org.springframework]': off
+    '[com.gusrubin.lab.hexagonal]': off
+    '[com.gusrubin.lab.hexagonal.application.schedule]': info
+    '[org.jline]': off
