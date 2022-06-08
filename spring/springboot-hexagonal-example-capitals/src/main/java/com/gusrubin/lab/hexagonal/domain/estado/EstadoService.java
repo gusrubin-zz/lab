@@ -24,7 +24,7 @@ public class EstadoService implements ConsultaCapitalUseCase {
 		// Performs method goals
 		Estado persistedUf = estadoRepository.findByUf(uf.toUpperCase());
 		if (persistedUf == null) {
-			throw new IllegalArgumentException("UF não cadastrada");
+			throw new IllegalArgumentException("UF não existe");
 		}
 		return persistedUf.getCapital();
 	}
