@@ -25,8 +25,15 @@ public class EstadoController {
 
 	@GetMapping("/{uf}")
 	public String getCapitalByUf(@PathVariable("uf") String uf) {
+		String response = null;
 
-		return consultaCapital.consultaCapitalPorUf(uf);
+		try {
+			response = consultaCapital.consultaCapitalPorUf(uf);
+		} catch (Exception e) {
+			response = e.getMessage();
+		}
+
+		return response;
 	}
 
 }

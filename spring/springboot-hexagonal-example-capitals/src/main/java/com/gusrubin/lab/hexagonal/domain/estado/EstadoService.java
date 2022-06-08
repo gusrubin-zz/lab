@@ -1,6 +1,5 @@
 package com.gusrubin.lab.hexagonal.domain.estado;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 
 /**
@@ -11,7 +10,6 @@ public class EstadoService implements ConsultaCapitalUseCase {
 
 	private final EstadoRepositoryPort estadoRepository;
 
-	@Autowired
 	public EstadoService(EstadoRepositoryPort ufRepositoryPort) {
 		this.estadoRepository = ufRepositoryPort;
 	}
