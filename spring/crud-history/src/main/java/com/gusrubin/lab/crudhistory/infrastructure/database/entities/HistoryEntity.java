@@ -36,6 +36,8 @@ public class HistoryEntity {
 	private String action;
 	@Column(name = "command_args")
 	private String commandArgs;
+	@Column(name = "successful")
+	private Boolean successful;
 	@Column(name = "command_result")
 	private String commandResult;
 

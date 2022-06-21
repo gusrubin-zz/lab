@@ -9,6 +9,10 @@ Coloquei os seguintes requisitos para desenvolver:
 * A anotação tem que ser usada na camada de domínio pois a consulta dos registros será disponibilizada pelo domínio;
 * A implementação da persistência do registro deve que ser agnóstica de tecnologia e a execução deve ser assíncrona para não onerar a thread do método chamado.
 
+Pendências:
+* Capturar usuário da requisição;
+* Verificar como transformar essa feature em pacote Maven/Gradle (SDK?)
+
 ### Configuração
 Criar banco de dados postgres local para desenvolvimento:
 

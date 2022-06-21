@@ -18,6 +18,7 @@ public class ActionLog {
 	private String context;
 	private ActionType action;
 	private String commandArgs;
+	private Boolean successful;
 	private String commandResult;
 
 }

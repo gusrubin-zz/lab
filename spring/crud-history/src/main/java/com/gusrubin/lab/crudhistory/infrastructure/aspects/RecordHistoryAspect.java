@@ -34,8 +34,6 @@ public class RecordHistoryAspect {
 		Method method = signature.getMethod();
 		LogInHistory annotationParams = method.getAnnotation(LogInHistory.class);
 
-		Object result = joinPoint.proceed();
-
 		ActionLog actionLog = ActionLog.builder()
 		// @formatter:off
 				.occurredAt(LocalDateTime.now())
@@ -43,9 +41,24 @@ public class RecordHistoryAspect {
 				.context(annotationParams.context())
 				.action(annotationParams.action())
 				.commandArgs(Arrays.toString(joinPoint.getArgs()))
-				.commandResult(result != null ? result.toString(): null)
 				.build();
 		// @formatter:on
+
+		Object result = null;
+
+		try {
+			result = joinPoint.proceed();
+			actionLog.setSuccessful(Boolean.TRUE);
+			actionLog.setCommandResult(result != null ? result.toString() : null);
+			logInHistory.save(actionLog);
+
+		} catch (Exception e) {
+			actionLog.setSuccessful(Boolean.FALSE);
+			actionLog.setCommandResult(e.getMessage());
+			logInHistory.save(actionLog);
+			
+			throw e;
+		}
 
 		// Example logging sync way directly
 //		save(actionLog);
@@ -54,7 +67,7 @@ public class RecordHistoryAspect {
 //		saveWithThread(actionLog);
 
 		// Example logging async way using Spring @Async
-		logInHistory.save(actionLog);
+//		logInHistory.save(actionLog);
 
 		return result;
 	}
