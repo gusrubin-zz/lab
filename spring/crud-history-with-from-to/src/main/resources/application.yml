@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: crud-history
+server:
+  port: 8090
+logging:
+  file:
+    name: logs/crud-history.log
+  level:
+    '[com.gusrubin.lab.crudhistory]': debug
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - h2-database
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb    
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  flyway:
+    enabled: false
+  sql:
+    init:
+      mode: always
+      platform: h2
+  h2:
+    console:
+      enabled: true
+      #http://localhost:8090/h2-console
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - postgres-database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/crud-history-with-from-to
+    username: postgres
+    password: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true    
